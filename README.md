@@ -27,17 +27,22 @@ To install Kiwi IRC on your own server, pre-built and ready to use installers ca
 However if you download one of these "prebuilt" binaries you will need to create a config.conf by copying config.conf.example and editting it. Then you you also need
 to edit www/static/config.json
 in that file under "startupOptions" : { you will need to add lines like the following:
+```
                 "server": "your.default.com",
                 "port": 6667,
                 "tls": false,
+```
 or if the IRC server you have chosen as your default supports tls,
+```
                 "server": "your.default.com",
                 "port": 6697,
                 "tls": true,
+```
 Make sure you configure a certificate. Then you should be able to point web browser at https://your.host.com:port###/ and run the client.
 
 ## Setting up Kiwi IRC to use with UnrealIRCd
 First you need to add the following lines to your unrealircd.conf file:
+```
 loadmodule "websocket";
 loadmodule "webserver";
 listen {
@@ -55,11 +60,14 @@ listen {
         };
     };
 };
+```
 Then in your Kiwi IRC web folder, modify static/config.json and in that file under "startupOptions" : { you will need to add lines like the following:
+```
         "server": "yourirc.server.com",
         "port": 8000,
         "tls": true,
         "direct": true,
+```
 You will only be able to connect to IRC servers (like your that you just configured) that support the websocket protocol.
 
 ## Building from source
