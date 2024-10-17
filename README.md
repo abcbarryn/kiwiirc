@@ -38,6 +38,7 @@ or if the IRC server you have chosen as your default supports tls,
                 "port": 6697,
                 "tls": true,
 ```
+This is necessary because the default server hard coded into these downloads is no longer online.
 Make sure you configure a certificate. Then you should be able to point web browser at https://your.host.com:port###/ and run the client.
 
 ## Setting up Kiwi IRC to use with UnrealIRCd
