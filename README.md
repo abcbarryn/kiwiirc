@@ -4,7 +4,7 @@
 
 
 - 100% static files. Host with your favourite web server or a CDN
-- Works out of the box with UnrealIRCd
+- Works with UnrealIRCd
 - Single or multiple IRC network connections
 - Multiple layouts for small areas or full page layouts
 - Light and dark modes
