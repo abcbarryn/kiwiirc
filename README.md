@@ -4,8 +4,7 @@
 
 
 - 100% static files. Host with your favourite web server or a CDN
-- For single networks, bouncer hosts, or a personal generic IRC client that remembers your networks
-- Works out of the box with a default IRC network - or use your own
+- Works out of the box with UnrealIRCd
 - Single or multiple IRC network connections
 - Multiple layouts for small areas or full page layouts
 - Light and dark modes
@@ -21,9 +20,47 @@ Connection modes:
 - Stay connected with [KiwiBNC](https://github.com/kiwiirc/kiwibnc)
 
 ## Installing Kiwi IRC
-If you just want to embed an IRC client on your website, you can generate a custom client hosted by kiwiirc.com using the simple client builder, https://kiwiirc.com/clientbuilder/
+If you just wanted to embed an IRC client on your website, you usedto be able to generate a custom client hosted by kiwiirc.com using the simple client builder, https://kiwiirc.com/clientbuilder/
+This has been giving an error "Gateway time-out" when I have tried it, however.
 
 To install Kiwi IRC on your own server, pre-built and ready to use installers can be found at the downloads page, https://kiwiirc.com/downloads/
+However if you download one of these "prebuilt" binaries you will need to create a config.conf by copying config.conf.example and editting it. Then you you also need
+to edit www/static/config.json
+in that file under "startupOptions" : { you will need to add lines like the following:
+                "server": "your.default.com",
+                "port": 6667,
+                "tls": false,
+or if the IRC server you have chosen as your default supports tls,
+                "server": "your.default.com",
+                "port": 6697,
+                "tls": true,
+Make sure you configure a certificate. Then you should be able to point web browser at https://your.host.com:port###/ and run the client.
+
+## Setting up Kiwi IRC to use with UnrealIRCd
+First you need to add the following lines to your unrealircd.conf file:
+loadmodule "websocket";
+loadmodule "webserver";
+listen {
+    ip *;
+    port 8000;
+    options {
+        tls;
+        websocket { type text; } // type must be either 'text' or 'binary'
+    };
+    tls-options {
+        certificate "server.cert.pem";
+        key "server.key.pem";
+        options {
+            no-client-certificate;
+        };
+    };
+};
+Then in your Kiwi IRC web folder, modify static/config.json and in that file under "startupOptions" : { you will need to add lines like the following:
+        "server": "yourirc.server.com",
+        "port": 8000,
+        "tls": true,
+        "direct": true,
+You will only be able to connect to IRC servers (like your that you just configured) that support the websocket protocol.
 
 ## Building from source
 #### Dependencies
