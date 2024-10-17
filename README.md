@@ -69,7 +69,50 @@ Then in your Kiwi IRC web folder, modify static/config.json and in that file und
         "tls": true,
         "direct": true,
 ```
-You will only be able to connect to IRC servers (like your that you just configured) that support the websocket protocol.
+You will only be able to connect to IRC servers (like your that you just configured) that support the websocket protocol. Make sure that if your web server
+sends a Content-Security-Policy header that it will alllow components to load from the following sites:
+```
+bestiejs.github.io
+bugs.chromium.org
+bugs.webkit.org
+bugzilla.mozilla.org
+code.google.com
+css-tricks.com
+developer.chrome.com
+developer.mozilla.org
+docs.inspircd.org
+drafts.csswg.org
+en.wikipedia.org
+es5.github.io
+fonts.googleapis.com
+gist.github.com
+github.com
+goo.gl
+hcaptcha.com
+html.spec.whatwg.org
+irc.server.com
+jhildenbiddle.github.io
+kiwiirc.com
+lodash.com
+mathiasbynens.be
+mdn.io
+mths.be
+npms.io
+openjsf.org
+pastebin.com
+people.mozilla.org
+regex101.com
+stackoverflow.com
+tc39.github.io
+tools.ietf.org
+url.spec.whatwg.org
+w3c.github.io
+www.google.com
+www.i18next.com
+www.npmjs.com
+www.w3.org
+```
+Also make sure to allow content from your UnrealIRCd web socket.
 
 ## Building from source
 #### Dependencies
