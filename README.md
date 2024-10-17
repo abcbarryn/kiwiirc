@@ -20,7 +20,7 @@ Connection modes:
 - Stay connected with [KiwiBNC](https://github.com/kiwiirc/kiwibnc)
 
 ## Installing Kiwi IRC
-If you just wanted to embed an IRC client on your website, you usedto be able to generate a custom client hosted by kiwiirc.com using the simple client builder, https://kiwiirc.com/clientbuilder/
+If you just wanted to embed an IRC client on your website, you used to be able to generate a custom client hosted by kiwiirc.com using the simple client builder, https://kiwiirc.com/clientbuilder/
 This has been giving an error "Gateway time-out" when I have tried it, however.
 
 To install Kiwi IRC on your own server, pre-built and ready to use installers can be found at the downloads page, https://kiwiirc.com/downloads/
