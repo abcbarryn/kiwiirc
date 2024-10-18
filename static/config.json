@@ -16,9 +16,14 @@
         { "name": "Elite", "url": "static/themes/elite" }
     ],
     "startupOptions" : {
-        "channel": "#kiwiirc-default",
-        "nick": "kiwi-n?"
+        "server": "irc.unrealircd.org",
+        "port": 443,
+        "tls": true,
+        "direct": true,
+        "channel": "#default",
+        "nick": "ircuser-n?"
     },
+    "disconnectOnSaslFail": false,
     "embedly": {
         "key": ""
     },
