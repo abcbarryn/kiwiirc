@@ -112,7 +112,10 @@ www.i18next.com
 www.npmjs.com
 www.w3.org
 ```
-Also make sure to allow content from your UnrealIRCd web socket.
+Also make sure to allow content from your UnrealIRCd web socket. Example:
+```
+connect-src wss://irc.unrealircd.org/;
+```
 
 ## Building from source
 #### Dependencies
