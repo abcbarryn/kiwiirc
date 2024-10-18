@@ -62,7 +62,7 @@ listen {
     };
 };
 ```
-Then in your Kiwi IRC web folder, modify static/config.json and in that file under "startupOptions" : { you will need to add lines like the following:
+Then in your Kiwi IRC web folder, modify static/config.json and in that file under "startupOptions" : { you will need to change or add the following lines:
 ```
         "server": "yourirc.server.com",
         "port": 8000,
