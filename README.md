@@ -69,7 +69,7 @@ Then in your Kiwi IRC web folder, modify static/config.json and in that file und
         "tls": true,
         "direct": true,
 ```
-You will only be able to connect to IRC servers (like your that you just configured) that support the websocket protocol. Make sure that if your web server
+You will only be able to connect to IRC servers (like yours that you just configured) that support the websocket protocol. Make sure that if your web server
 sends a Content-Security-Policy header that it will alllow components to load from the following sites:
 ```
 bestiejs.github.io
