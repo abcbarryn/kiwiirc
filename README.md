@@ -21,7 +21,6 @@ Connection modes:
 
 ## Installing Kiwi IRC
 If you just wanted to embed an IRC client on your website, you used to be able to generate a custom client hosted by kiwiirc.com using the simple client builder, https://kiwiirc.com/clientbuilder/
-This has been giving an error "Gateway time-out" when I have tried it, however.
 
 To install Kiwi IRC on your own server, pre-built and ready to use installers can be found at the downloads page, https://kiwiirc.com/downloads/
 However if you download one of these "prebuilt" binaries you will need to create a config.conf by copying config.conf.example and editting it. Then you you also need
