@@ -363,9 +363,8 @@ function clientMiddleware(state, network) {
                     buffer.enabled = false;
                 }
             } else {
-                // Only show non-numeric commands
-                if (!event.command.match(/^\d+$/)) {
-                    message += event.command + ' ';
+                if (!/^\d+$/.test(event.command)) {
+                    message = '\x02' + event.command + '\x02 ' + message;
                 }
 
                 state.addMessage(buffer, {
@@ -1462,6 +1461,10 @@ function clientMiddleware(state, network) {
                 text: event.reason,
             });
             let buffer = state.getActiveBuffer();
+            if (network !== state.getActiveNetwork()) {
+                buffer = network.serverBuffer();
+            }
+
             state.addMessage(buffer, {
                 time: eventTime,
                 server_time: serverTime,
